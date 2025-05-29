@@ -1,5 +1,5 @@
 {% extends 'admin_pages/base.html' %}
-
+{% load static  %}
 {% block content %}
 
 <div>
@@ -16,6 +16,8 @@
             <div>
                 {% if product.image %}
                     <img width="200" height="auto" src="{{ product.image.url }}">
+                {% else %}
+                    <img src="{% static 'img/no_image.png'%}" width="150px" height="auto">
                 {% endif %}
             </div>
             <div>Цена: <span>{{ product.price }}</span></div>
